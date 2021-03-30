@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="bloglist.css">
+    <link rel="stylesheet" href="post .css">
+    <script src="post.js"></script>
+    
+    <script src="header.js"></script>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+        <style>
+            body{
+              background-color: white;
+    width: 100%;
+    height: 100vh;
+    padding: 0 1.5rem;
+            }
+            
+            /* Set a style for all buttons */
+            button {
+             
+              color:dodgerblue;
+              float: right;
+              padding: 14px 20px;
+              margin: 8px 0;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+              opacity: 0.9;
+              
+
+            }
+            
+            button:hover {
+              opacity:1;
+            
+            }
+            
+            
+            /* Float signup buttons and add  width */
+            .signupbtn {
+              background-color: dodgerblue;
+                float: initial;
+              left: center;
+              align-items: left;
+              width: 100%;
+            }
+            
+            /* Add padding to container elements */
+            .container {
+              padding: 10px;
+            
+            }
+            
+            /* The Modal (background) */
+            .modal {
+              display: none; /* Hidden by default */
+              position: fixed; /* Stay in place */
+              z-index: 1; /* Sit on top */
+              left: 0;
+              top: 0;
+              width: 100%; /* Full width */
+              height: 100%; /* Full height */
+              overflow: auto; /* Enable scroll if needed */
+             
+              padding-top: 50px;
+            }
+            
+            /* Modal Content/Box */
+            .modal-content {
+              background-color: #fefefe;
+              margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+              border: 1px solid #888;
+              width: 50%; /* Could be more or less, depending on screen size */
+            }
+            
+            /* Style the horizontal ruler */
+            hr {
+              border: 1px solid #f1f1f1;
+              margin-bottom: 25px;
+            }
+             
+            /* The Close Button (x) */
+            .close {
+              position: absolute;
+              right: 35px;
+              top: 15px;
+              font-size: 40px;
+              font-weight: bold;
+              color: #f1f1f1;
+            }
+            
+            .close:hover,
+            .close:focus {
+              color:grey;
+              cursor: pointer;
+            }
+
+            
+            /* Clear floats */
+            .clearfix::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+
+            .hr1{
+    border-top: 1px solid darkgray;
+  }
+
+  #signupbutton{
+    margin-left: 100px;
+    margin-right: 200px;
+    margin-bottom: 400px;
+}
+            
+            /* Change styles for cancel button and signup button on extra small screens */
+            @media screen and (max-width: 300px) {
+               .signupbtn {
+                margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+              }
+            }
+            </style>
+            <body>
+            
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto; background-color: dodgerblue; margin-left: 10px;">Sign Up</button>
+            
+            <div id="id01" class="modal">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <form class="modal-content" action="/action_page.php">
+                <div class="container">
+                  <h1>Get Started</h1>
+                  
+                  <hr class="hr1">
+                  <label for="email"><b>Enter Full Name</b></label>
+                  <input type="text" placeholder="Enter Email" name="full_name" required>
+
+                  <label for="email"><b>User Name</b></label>
+                  <input type="text" placeholder="Enter User Name" name="user_name" required>
+            
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="psw" required>
+            
+                  <label for="psw-repeat"><b>Confirm Password</b></label>
+                  <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
+                  
+
+            
+                  <div class="clearfix">
+                    <button type="submit" id="signupbtn">Sign Up</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+            
+
+            <style>
+              
+  /* Sign in button */
+
+  .signinbutton{
+    margin-left: 100px;
+    margin-right: 200px;
+}
+              /* Full-width input fields */
+              input[type=text], input[type=password] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                display: inline-block;
+                border: none;
+                background: #f1f1f1;
+              }
+              
+              /* Add a background color when the inputs get focus */
+              input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+              }
+              
+              /* Set a style for all buttons */
+              button {
+                background-color: #4CAF50;
+                color: white;
+                float: right;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                opacity: 0.9;
+              }
+              
+              button:hover {
+                opacity:1;
+              }
+              
+              
+              /* Float signin buttons and add  width */
+              .signinbtn {
+                  float: initial;
+                left: center;
+                align-items: left;
+                width: 100%;
+              }
+              
+              /* Add padding to container elements */
+              .cont {
+                padding: 10px;
+              }
+              .p1{
+                text-align: center;
+              }
+              
+              /* The Modal (background) */
+              .smodal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+               
+                padding-top: 50px;
+              }
+              
+              /* Modal Content/Box */
+              .tent {
+                background-color: #fefefe;
+                margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+                border: 1px solid #888;
+                width: 50%; /* Could be more or less, depending on screen size */
+              }
+              
+              /* Style the horizontal ruler */
+              hr {
+                border: 1px black;
+                margin-bottom: 25px;
+              }
+               
+              /* The Close Button (x) */
+              .sclose {
+                position: absolute;
+                right: 35px;
+                top: 15px;
+                font-size: 40px;
+                font-weight: bold;
+                color: #f1f1f1;
+              }
+              
+              .sclose:hover,
+              .sclose:focus {
+                color:grey;
+                cursor: pointer;
+              }
+  
+              
+              /* Clear floats */
+              .fix::after {
+                content: "";
+                clear: both;
+                display: table;
+              }
+              .hr {
+    border-top: 1px solid darkgray;
+  }
+  .post{
+    max-width: 10px;
+    align-items: center;
+  }
+              
+              
+              /* Change style for signin button on extra small screens */
+              @media screen and (max-width: 300px) {
+                 .signinbtn {
+                  margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+                }
+              }
+              </style>
+              <body>
+              
+              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto; background-color: dodgerblue;">Sign In</button>
+              
+              <div id="id02" class="smodal">
+                <span onclick="document.getElementById('id02').style.display='none'" class="sclose" title="Close Modal">&times;</span>
+                <form class="tent" action="/action_page.php">
+                  <div class="cont">
+                    <h1>Welcome Back!</h1>
+                    
+                    <hr class="hr">
+                    <label for="email"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+              
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="pswd" required>
+      
+                    
+  
+              
+                    <div class="fix">
+                      <button type="submit" class="signinbtn" value="Sign In" onclick="openWin()">Sign In</button>
+                      <b><p class="p1">Not a Member? <a href="#"  style="color:dodgerblue" >Sign Up</a></p></b>
+                    </div>
+                  </div>
+                </form>
+              </div>
+      
+  </body>
+  </body>
+
+
+  </html>
+</head>
+  
+  
+            </style>
+    <!-- TODO: Include Font Awesome file here -->
+    <!-- TODO: Include Google Fonts file here -->
+</head>
+
+  
+      
+    <p class="logo-title">ScriBBler</p>
+    <p class="middleText">Explore, Imagine, Create</p>
+
+   <div style="text-align: center; font-size:25px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><p>The legacy of Jimi Hendrix</p>
+  <br>
+  <div style="text-align: left; padding-left: 50px; font-family: cursive;"><p>Jimi</p></div>
+  <br>
+  
+<style>
+  
+  
+  #container {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+  
+  #edit {
+    padding: 5px;
+    outline: none;
+  }
+  
+  #b0 {
+   margin-top: 165px;
+   
+   margin-left: 1235px;
+   position: absolute;
+   top:13px;
+ 
+    width: 80px;
+    padding: 5px;
+  
+    background-color: #ef3b65;
+    
+    
+    box-shadow: 2px 2px 2px #3f3f3f;
+  }
+  #end-editing{
+    margin-top: 165px;
+   
+   margin-left: 1150px;
+   position: absolute;
+   top:13px;
+ 
+    width: 80px;
+    padding: 5px;
+  
+    background-color: #ef3b65;
+    
+    
+    box-shadow: 2px 2px 2px #3f3f3f;
+  }
+  
+  
+
+
+ 
+
+p { padding-left: 10px; }
+
+
+/*
+ * Basic button style
+ */
+.btn {
+  
+  border-radius: 3px;
+  border: 1px solid;
+  display: inline-block;
+  
+  
+  padding: 0 8px;
+  position: relative;
+
+  
+}
+/*
+ * Counter button style
+ */
+
+.btn-counter:after {
+  border-radius: 3px;
+  border: 1px solid #d3d3d3;
+  background-color: #eee;
+  padding: 0 8px;
+  color: #777;
+  content: attr(data-count);
+  left: 100%;
+  margin-left: 8px;
+  margin-right: -13px;
+  position: absolute;
+  top: -1px;
+}
+
+ * Custom styles
+ */
+ #respond {
+  margin-top: 40px;
+}
+
+#respond input[type='text'],
+#respond input[type='email'],
+#respond textarea {
+  margin-bottom: 10px;
+  display: block;
+  width: 100%;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+
+  line-height: 1.4em;
+}
+.y{
+  background-color: #ef3b65;
+  width: 90px;
+    padding: 5px;
+}
+
+
+  
+  </style>
+  
+  <div id="container" style="text-align: left; padding-left: 50px; font-size: 18px;"><p id="edit">Jimi Hendrix was arguably the greatest instrumentalist in the history of rock music.[1] Hendrix expanded the range and vocabulary of the electric guitar into areas no musician had
+    ever ventured before. His boundless drive, technical ability and creative application of such effects as distortion forever transformed the sound of rock and roll. While creating his
+    unique musical voice and guitar style, Hendrix synthesized diverse genres, including blues, R&B, soul, British rock, American folk music, 1950s rock and roll, psychedelic and jazz.
+    Hendrix favored overdriven amplifiers with high volume and gain.[119] He was instrumental in developing the previously undesirable technique of guitar amplifier feedback, and helped
+    to popularize use of the wah-wah pedal in mainstream rock.[348] He rejected the standard barre chord fretting technique used by most guitarists in favor of fretting the low 6th string
+    root notes with his thumb.[349] He applied this technique during the beginning bars of "Little Wing", which allowed him to sustain the root note of chords while also playing melody.
+    This method has been described as piano style, with the thumb playing what a pianist's left hand would play and the other fingers playing melody as a right hand.[350] Having spent
+    several years fronting a trio, he developed an ability to play rhythm chords and lead lines together, giving the audio impression that more than one guitarist was performing [351][nb
+    41] He was the first artist to incorporate stereophonic phasing effects in rock music recordings.[354] Holly George-Warren of Rolling Stone commented: "Hendrix pioneered the use
+    of the instrument as an electronic sound source. Players before him had experimented with feedback and distortion, but Hendrix turned those effects and others into a controlled,
+    fluid vocabulary every bit as personal as the blues with which he began."[3][nb 42] Aledort wrote: "In rock guitar, there are but two eras — before Hendrix and after Hendrix."</p>
+
+    <p>
+      <a href="#" title="Love it" class="btn btn-counter multiple-count" data-count="0"><button><span>&#128077;</span></button></a>
+     
+    </p>
+
+    <div id="respond">
+
+      
+    
+      <form action="post_comment.php" method="post" id="commentform">
+    
+        
+        <label for="comment" class="required"></label>
+        <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required" placeholder="Leave A Comment..."></textarea>
+    
+      
+        <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+        <input name="submit" type="submit" value="Comment" class="y" />
+    
+      </form>
+    
+    </div>
+      
+      
+  <button type="submit" id="b0">Edit</button>
+  <button type="submit" id="end-editing">Done</button>
+</div>
+  
+</div>
+
+
+
+<script>
+  const paragraph = document.getElementById("edit");
+const edit_button = document.getElementById("b0");
+const end_button = document.getElementById("end-editing");
+
+edit_button.addEventListener("click", function() {
+  paragraph.contentEditable = true;
+  paragraph.style.backgroundColor = "#dddbdb";
+} );
+end_button.addEventListener("click", function() {
+  paragraph.contentEditable = false;
+  paragraph.style.backgroundColor = "white";
+} )
+
+</script>
+
+<script>
+
+$('.btn-counter').on('click', function(event, count) {
+  event.preventDefault();
+  
+  var $this = $(this),
+      count = $this.attr('data-count'),
+      active = $this.hasClass('active'),
+      multiple = $this.hasClass('multiple-count');
+  
+  // First method, allows to add custom function
+  // Use when you want to do an ajax request
+  /* if (multiple) {
+  $this.attr('data-count', ++count);
+  // Your code here
+  } else {
+  $this.attr('data-count', active ? --count : ++count).toggleClass('active');
+  // Your code here
+  } */
+  
+  // Second method, use when ... I dunno when but it looks cool and that's why it is here
+  $.fn.noop = $.noop;
+  $this.attr('data-count', ! active || multiple ? ++count : --count  )[multiple ? 'noop' : 'toggleClass']('active');
+  
+});
+</script>
+
+</style>
+    <!-- TODO: Include Font Awesome file here -->
+    <!-- TODO: Include Google Fonts file here -->
+</head>
+
+
+  
+ 
+</head>
+
+  
+</div>
+
+</body>
+      

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="bloglist.css">
+    <script src="index.js"></script>
+    <script src="header.js"></script>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+        <style>
+            body{
+              background-color: orange;
+    width: 100%;
+    height: 100vh;
+    padding: 0 1.5rem;
+            }
+            
+            /* Set a style for all buttons */
+            button {
+             
+              color:dodgerblue;
+              float: right;
+              padding: 14px 20px;
+              margin: 8px 0;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+              opacity: 0.9;
+              
+
+            }
+            
+            button:hover {
+              opacity:1;
+            
+            }
+            
+            
+            /* Float signup buttons and add  width */
+            .signupbtn {
+              background-color: dodgerblue;
+                float: initial;
+              left: center;
+              align-items: left;
+              width: 100%;
+            }
+            
+            /* Add padding to container elements */
+            .container {
+              padding: 10px;
+            
+            }
+            
+            /* The Modal (background) */
+            .modal {
+              display: none; /* Hidden by default */
+              position: fixed; /* Stay in place */
+              z-index: 1; /* Sit on top */
+              left: 0;
+              top: 0;
+              width: 100%; /* Full width */
+              height: 100%; /* Full height */
+              overflow: auto; /* Enable scroll if needed */
+             
+              padding-top: 50px;
+            }
+            
+            /* Modal Content/Box */
+            .modal-content {
+              background-color: #fefefe;
+              margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+              border: 1px solid #888;
+              width: 50%; /* Could be more or less, depending on screen size */
+            }
+            
+            /* Style the horizontal ruler */
+            hr {
+              border: 1px solid #f1f1f1;
+              margin-bottom: 25px;
+            }
+             
+            /* The Close Button (x) */
+            .close {
+              position: absolute;
+              right: 35px;
+              top: 15px;
+              font-size: 40px;
+              font-weight: bold;
+              color: #f1f1f1;
+            }
+            
+            .close:hover,
+            .close:focus {
+              color:grey;
+              cursor: pointer;
+            }
+
+            
+            /* Clear floats */
+            .clearfix::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+
+            .hr1{
+    border-top: 1px solid darkgray;
+  }
+
+  #signupbutton{
+    margin-left: 100px;
+    margin-right: 200px;
+    margin-bottom: 400px;
+}
+            
+            /* Change styles for cancel button and signup button on extra small screens */
+            @media screen and (max-width: 300px) {
+               .signupbtn {
+                margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+              }
+            }
+            </style>
+            <body>
+            
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto; background-color: dodgerblue; margin-left: 10px;">Sign Up</button>
+            
+            <div id="id01" class="modal">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <form class="modal-content" action="/action_page.php">
+                <div class="container">
+                  <h1>Get Started</h1>
+                  
+                  <hr class="hr1">
+                  <label for="email"><b>Enter Full Name</b></label>
+                  <input type="text" placeholder="Enter Email" name="full_name" required>
+
+                  <label for="email"><b>User Name</b></label>
+                  <input type="text" placeholder="Enter User Name" name="user_name" required>
+            
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="psw" required>
+            
+                  <label for="psw-repeat"><b>Confirm Password</b></label>
+                  <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
+                  
+
+            
+                  <div class="clearfix">
+                    <button type="submit" id="signupbtn">Sign Up</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+            
+
+            <style>
+              
+  /* Sign in button */
+
+  .signinbutton{
+    margin-left: 100px;
+    margin-right: 200px;
+}
+              /* Full-width input fields */
+              input[type=text], input[type=password] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                display: inline-block;
+                border: none;
+                background: #f1f1f1;
+              }
+              
+              /* Add a background color when the inputs get focus */
+              input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+              }
+              
+              /* Set a style for all buttons */
+              button {
+                background-color: #4CAF50;
+                color: white;
+                float: right;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                opacity: 0.9;
+              }
+              
+              button:hover {
+                opacity:1;
+              }
+              
+              
+              /* Float signin buttons and add  width */
+              .signinbtn {
+                  float: initial;
+                left: center;
+                align-items: left;
+                width: 100%;
+              }
+              
+              /* Add padding to container elements */
+              .cont {
+                padding: 10px;
+              }
+              .p1{
+                text-align: center;
+              }
+              
+              /* The Modal (background) */
+              .smodal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+               
+                padding-top: 50px;
+              }
+              
+              /* Modal Content/Box */
+              .tent {
+                background-color: #fefefe;
+                margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+                border: 1px solid #888;
+                width: 50%; /* Could be more or less, depending on screen size */
+              }
+              
+              /* Style the horizontal ruler */
+              hr {
+                border: 1px black;
+                margin-bottom: 25px;
+              }
+               
+              /* The Close Button (x) */
+              .sclose {
+                position: absolute;
+                right: 35px;
+                top: 15px;
+                font-size: 40px;
+                font-weight: bold;
+                color: #f1f1f1;
+              }
+              
+              .sclose:hover,
+              .sclose:focus {
+                color:grey;
+                cursor: pointer;
+              }
+  
+              
+              /* Clear floats */
+              .fix::after {
+                content: "";
+                clear: both;
+                display: table;
+              }
+              .hr {
+    border-top: 1px solid darkgray;
+  }
+  .post{
+    max-width: 10px;
+    align-items: center;
+  }
+              
+              
+              /* Change style for signin button on extra small screens */
+              @media screen and (max-width: 300px) {
+                 .signinbtn {
+                  margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+                }
+              }
+              </style>
+              <body>
+              
+              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto; background-color: dodgerblue;">Sign In</button>
+              
+              <div id="id02" class="smodal">
+                <span onclick="document.getElementById('id02').style.display='none'" class="sclose" title="Close Modal">&times;</span>
+                <form class="tent" action="/action_page.php">
+                  <div class="cont">
+                    <h1>Welcome Back!</h1>
+                    
+                    <hr class="hr">
+                    <label for="email"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+              
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="pswd" required>
+      
+                    
+  
+              
+                    <div class="fix">
+                      <button type="submit" class="signinbtn" value="Sign In" onclick="openWin()">Sign In</button>
+                      <b><p class="p1">Not a Member? <a href="#"  style="color:dodgerblue" >Sign Up</a></p></b>
+                    </div>
+                  </div>
+                </form>
+              </div>
+      
+  </body>
+  </body>
+
+
+  </html>
+</head>
+  
+  
+            </style>
+    <!-- TODO: Include Font Awesome file here -->
+    <!-- TODO: Include Google Fonts file here -->
+</head>
+<body>
+
+  
+      
+    <p class="logo-title">ScriBBler</p>
+    <p class="middleText">Explore, Imagine, Create</p>
+
+   <div style="width: 40%; height: 30%; display: table; float: right; margin-top: 30px; margin-left: 30px;">
+      <div style="display: table-row; height: 200px;">
+          <div  style="width: 2%; margin: 18px; padding-right:10px; height:1px ;display: table-cell; background: white; border-radius: 15px;">
+             <b><p class=J>Jimi</p></b>
+          </div>
+          <div style=" width: 19%;height: 19%; margin-right: 18px; padding-right: 8px; padding-left: 8px; column-width: 18px; display: table-cell; background: lightgray; border-radius: 15px;"> 
+            <div style="margin:400px;"><a href="file:///Users/somyasharma/Desktop/post%20.html">...</a></div>
+          </div>
+      </div>
+  </div> 
+  <br>
+    <div style="width: 40%; height: 30%; display: table; text-align: right; margin-top: 12px;">
+      <div style="display: table-row; height: 200px;">
+          <div  style="width: 2%;margin: 18px; padding-right:10px; height:1px ;display: table-cell; background: white; border-radius: 15px;">
+             <b><p class=J>Jimi</p></b>
+          </div>
+          <div style=" width: 19%;height: 19%; margin-right: 18px; padding-right: 8px; padding-left: 8px; column-width: 18px; display: table-cell; background: lightgray; border-radius: 15px;"> 
+            <div style="margin:400px;"><a href="file:///Users/somyasharma/Desktop/post%20.html">...</a></div>
+          </div>
+      </div>
+  </div>
+  <br>
+
+  
+  
+  <div style="width: 40%; height: 30%; display: table; float: right; margin-top: 30px;">
+    <div style="display: table-row; height: 200px;">
+        <div  style="width: 2%; margin: 18px; padding-right:10px; height:1px ;display: table-cell; background: white; border-radius: 15px;">
+           <b><p class=J>Jimi</p></b>
+        </div>
+        <div style=" width: 19%;height: 19%; margin-right: 18px; padding-right: 8px; padding-left: 8px; column-width: 18px; display: table-cell; background: lightgray; border-radius: 15px;"> 
+          <div style="margin:400px;"><a href="file:///Users/somyasharma/Desktop/post%20.html">...</a></div>
+        </div>
+    </div>
+</div> 
+<br>
+<div style="width: 40%; height: 30%; display: table;">
+  <div style="display: table-row; height: 200px;">
+      <div  style="width: 2%; margin: 18px; padding-right:10px; height:1px ;display: table-cell; background: white; border-radius: 15px;">
+         <b><p class=J>Jimi</p></b>
+      </div>
+      <div style=" width: 19%;height: 19%; margin-right: 18px; padding-right: 8px; padding-left: 8px; column-width: 18px; display: table-cell; background: lightgray; border-radius: 15px;"> 
+        <div style="margin:400px;"><a href="file:///Users/somyasharma/Desktop/post%20.html">...</a></div>
+      </div>
+  </div>
+</div>
+<br>
+<div style="width: 40%; height: 30%; display: table; margin-left: 400px;">
+  <div style="display: table-row; height: 200px;">
+      <div  style="width: 2%; margin: 18px; padding-right:10px; height:1px ;display: table-cell; background: white; border-radius: 15px;">
+         <b><p class=J>Jimi</p></b>
+      </div>
+      <div style=" width: 19%;height: 19%; margin-right: 18px; padding-right: 8px; padding-left: 8px; column-width: 18px; display: table-cell; background: lightgray; border-radius: 15px;"> 
+        <div style="margin-top: 250px; align-content: center;"><b><p id="T">Hello  This is Post 1.</p></b>
+
+          
+          </div>
+        <br>
+        <div style= "text-align:center; text-align: start;">
+          <div style="margin:300px;"><a href="file:///Users/somyasharma/Desktop/post%20.html">...</a></div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+      
+          
+      </body>
+      </html>
+      
+      
+    <style>
+  .dd{
+    width: 100px;
+  }
+.J{
+  text-align: center;
+  margin-top: 120px;
+}
+.T{
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+      
+
+
+
+</style>
+    <!-- TODO: Include Font Awesome file here -->
+    <!-- TODO: Include Google Fonts file here -->
+</head>
+
+
+  
+ 
+</head>
+
+  
+</div>
+
+</body>
+      
